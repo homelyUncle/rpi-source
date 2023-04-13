@@ -108,9 +108,9 @@ def download(url):
     debug("download: %s" % url)
     try:
         res = urllib2.urlopen(url).read()
-    except urllib2.HTTPError, e:
+    except urllib2.HTTPError as e:
         fail("Couldn't download %s, HTTPError: %s" % (url, e.code))
-    except urllib2.URLError, e:
+    except urllib2.URLError as e:
         fail("Couldn't download %s, URLError: %s" % (url, e.args))
     return res
 
